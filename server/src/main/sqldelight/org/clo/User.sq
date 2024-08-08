@@ -1,0 +1,29 @@
+CREATE TABLE usuarios (
+  nombre varchar(30) DEFAULT '',
+  username varchar(30) NOT NULL DEFAULT '',
+  password varchar(20) DEFAULT '',
+  vendedor varchar(8) DEFAULT '',
+  almacen varchar(2) DEFAULT '',
+  desactivo double(4,0) NOT NULL DEFAULT '0',
+  fechamodifi datetime NOT NULL DEFAULT '0001-01-01 01:01:01',
+  ualterprec double(4,0) NOT NULL DEFAULT '0',
+  sesionactiva datetime NOT NULL DEFAULT '0001-01-01 01:01:01',
+  ult_sinc datetime NOT NULL DEFAULT '0001-01-01 01:01:01',
+  version varchar(30) NOT NULL DEFAULT '1.0.0',
+  sesion int NOT NULL DEFAULT '0',
+  cierre_sesion tinyint(1) NOT NULL DEFAULT '0'
+);
+
+findAllUsers:
+SELECT *
+FROM usuarios;
+
+findUserByCode:
+SELECT *
+FROM usuarios
+WHERE usuarios.vendedor = :code;
+
+findUserByUsername:
+SELECT *
+FROM usuarios
+WHERE usuarios.username = :username;

@@ -1,0 +1,42 @@
+CREATE TABLE IF NOT EXISTS articulo (
+    codigo varchar(25) NOT NULL DEFAULT '',
+    grupo varchar(6) NOT NULL DEFAULT '',
+    subgrupo varchar(6) NOT NULL DEFAULT '',
+    nombre char(150) NOT NULL DEFAULT '',
+    referencia varchar(20) NOT NULL DEFAULT '',
+    marca varchar(20) NOT NULL DEFAULT '',
+    unidad varchar(15) NOT NULL DEFAULT '',
+    existencia double(20,7) NOT NULL DEFAULT '0.0000000',
+    precio1 double(20,7) NOT NULL DEFAULT '0.0000000',
+    precio2 double(20,7) NOT NULL DEFAULT '0.0000000',
+    precio3 double(20,7) NOT NULL DEFAULT '0.0000000',
+    precio4 double(20,7) NOT NULL DEFAULT '0.0000000',
+    precio5 double(20,7) NOT NULL DEFAULT '0.0000000',
+    precio6 double(20,7) NOT NULL DEFAULT '0.0000000',
+    precio7 double(20,7) NOT NULL DEFAULT '0.0000000',
+    fechamodifi datetime NOT NULL DEFAULT '0001-01-01 01:01:01',
+    discont double(4,0) NOT NULL DEFAULT '0',
+    vta_max double(20,7) NOT NULL DEFAULT '0.0000000',
+    vta_min double(20,7) NOT NULL DEFAULT '0.0000000',
+    dctotope double(4,2) NOT NULL DEFAULT '0.00',
+    enpreventa char(1) NOT NULL DEFAULT '0',
+    comprometido double(24,7) NOT NULL DEFAULT '0.0000000',
+    vta_minenx double(15,3) NOT NULL DEFAULT '0.000',
+    vta_solofac int NOT NULL DEFAULT '0',
+    vta_solone int NOT NULL DEFAULT '0',
+    costo_prom double(24,7) NOT NULL DEFAULT '0.0000000',
+    util1 double(24,7) NOT NULL DEFAULT '0.0000000',
+    util2 double(24,7) NOT NULL DEFAULT '0.0000000',
+    util3 double(24,7) NOT NULL DEFAULT '0.0000000',
+    fchultcomp date NOT NULL DEFAULT '0001-01-01',
+    qtyultcomp double(24,7) NOT NULL DEFAULT '0.0000000'
+);
+
+findAllProducts:
+SELECT *
+FROM articulo;
+
+findOneByCode:
+SELECT *
+FROM articulo
+WHERE articulo.codigo = :code;

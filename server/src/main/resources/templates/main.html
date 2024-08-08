@@ -1,0 +1,13 @@
+<main class="flex flex-col grow justify-center">
+  <div hx-get="/components/header" hx-swap="outerHTML" hx-trigger="load"></div>
+
+  <section
+    class="container mx-auto flex flex-col grow justify-center"
+    hx-get="/components/home"
+    hx-target="#content"
+    hx-swap="outerHTML"
+    hx-trigger="load"
+  >
+    <div id="content"></div>
+  </section>
+</main>

@@ -1,0 +1,28 @@
+<section class="w-auto, bg-blue-100">
+  <header class="container mx-auto flex flex-row justify-between p-2">
+    <div class="flex flex-row justify-center items-center gap-4">
+      <div>
+        <a class="flex grow justify-between p-2" href="/">
+          <button>
+            <img src="/static/images/icon/favicon-32x32.png" alt="logo" preload />
+          </button>
+        </a>
+      </div>
+      <div
+      class="flex justify-center"
+        hx-get="/components/header/nav"
+        hx-trigger="load"
+        hx-swap="innerHTML"
+        hx-target="this"
+        preload
+      ></div>
+    </div>
+    <div
+      hx-get="/components/header/auth"
+      hx-trigger="load"
+      hx-swap="outerHTML"
+      hx-target="this"
+      preload
+    ></div>
+  </header>
+</section>
